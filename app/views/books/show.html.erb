@@ -1,0 +1,12 @@
+<%= render 'books/sidebar', book: @book %>
+
+<div class="my_books">
+  <h4>Book detail</h4>
+  <%= @books.each do |book| %>
+   <%= link_to book.title, book_path %>
+   <%= book.body %>
+   <%= link_to "Edit", edit_book_path(book.id) %>
+   <%= link_to "Destroy", book_path(book.id), method: :delete, "data-confirm" => "本当に消しますか？" %>
+  <% end %>
+</div>
+
