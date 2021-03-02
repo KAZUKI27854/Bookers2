@@ -1,12 +1,15 @@
+<div class="flash">
+  <%= flash[:notice] %>
+</div>
 <%= render 'books/sidebar', book: @book, user: @user %>
 
 <div class="my_books">
   <h4>Book detail</h4>
-   <h4>プロフィール画像</h4>
-   <%= link_to current_user.name, user_path %>
-   <%= link_to @book.title, book_path(@book.id) %>
-   <%= @book.body %>
-   <%= link_to "Edit", edit_book_path(@book.id) %>
-   <%= link_to "Destroy", book_path(@book.id), method: :delete, "data-confirm" => "本当に消しますか？" %>
+  <h4>プロフィール画像</h4>
+  <%= link_to current_user.name, user_path %>
+  <%= link_to @book.title, book_path(@book.id) %>
+  <%= @book.body %>
+  <%= link_to "Edit", edit_book_path(@book.id) %>
+  <%= link_to "Destroy", book_path(@book.id), method: :delete, "data-confirm" => "本当に消しますか？" %>
 </div>
 
