@@ -17,10 +17,20 @@
  @import 'font-awesome-sprockets';
  @import 'font-awesome';
 
+
 #error_explanation {
   color: red;
 }
 
-#flash {
+.flash {
   color: green;
+}
+
+.bookers_introduction {
+    text-align: center;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 30px;
 }
