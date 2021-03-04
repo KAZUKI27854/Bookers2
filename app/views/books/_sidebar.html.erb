@@ -1,18 +1,28 @@
-<div class="user_info">
-  <h1>User info</h1>
-  <%= attachment_image_tag user, :profile_image, format: 'jpeg', size: "100x100", fallback: "no_image.jpg" %>
- 
-    <h4>name <%= user.name %></h4>
-    <h4>introduction <%= user.introduction %></h4>
-    <% if current_user.id == user.id %>
-    <%= link_to "user_edit", edit_user_path(current_user.id) %>
-    <% else %>
-    <%= link_to "user_edit", user_path(current_user.id) %>
-    <% end %>
+<div class="col-md-3">
+  <h2>User info</h2>
+  <%= attachment_image_tag  user, :profile_image, format: 'jpeg', size: "100x100", fallback: "no_image.jpg", class:"profile_image" %>
   
-</div>
+  <table class="table">
+      <tr></tr>
+      <tr>
+        <th>name</th>
+        <th><%= user.name %></th>
+      </tr>
+      <tr>
+        <th>introduction</th>
+        <th><%= user.introduction %></th>
+      </tr>
+  </table>
+  
+  <div class="row">
+    <% if current_user.id == user.id %>
+      <a class="btn btn-outline-secondary btn-block fas fa-user-cog" href="/users/<%= current_user.id %>/edit"></a>
+    <% else %>
+      <a class="btn btn-outline-secondary btn-block fas fa-user-cog" href="/users/<%= current_user.id %>"></a>
+    <% end %>
+  </div>
+    
 
-<div class="new_book">
   <%= form_with model:book, url:books_path, local:true do |f| %>
     <h2>New book</h2>
     <h4>Title</h4>
