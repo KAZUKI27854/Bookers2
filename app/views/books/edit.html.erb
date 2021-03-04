@@ -1,14 +1,33 @@
-<h1>Editing Book</h1>
-
-<div class="edit_book">
-  <%= form_with model:@book, local:true do |f| %>
-    <h4>Title</h4>
-    <%= f.text_field :title %>
-    <h4>Opinion</h4>
-    <%= f.text_area :body %>
-    <%= f.submit 'Update Book' %>
-    <%= link_to "Show", book_path(params[:id]) %>
-    |
-    <%= link_to "Back", books_path %>
-  <% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+      
+    
+    <h1>Editing Book</h1>
+    
+    <%= form_with model:@book, local:true do |f| %>
+      <div class="form-group">
+        <label for="InputTitle" class="form-label">Title</label>
+        <%= f.text_field :title, class:"form-control", id:"InputTitle" %>
+      </div>
+      <div class="form-group">
+        <label for="InputBody" class="form-label">Opinion</label>
+        <%= f.text_area :body, class:"form-control", id:"InputBody" %>
+      </div>
+      <div class="form-group">
+         <%= f.submit 'Update Book', class:"btn btn-md btn-success" %>
+      </div>
+      <%= link_to "Show", book_path(params[:id]) %>
+      |
+      <%= link_to "Back", books_path %>
+    <% end %>
+  
+    </div>  
+  </div>
 </div>
+
+
+
+
+
+  
