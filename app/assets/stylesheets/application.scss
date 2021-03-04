@@ -17,29 +17,18 @@
  @import 'font-awesome-sprockets';
  @import 'font-awesome';
 
-.navbar-dark .navbar-nav .nav-link{
-    color: red;
-}
 
-.nav-text {
-    color: white;
-}
-
-.nav-text:hover {
-  color: lightgray;
-  text-decoration: none;
-}
-
-.nav-link:hover {
-  color: gray;
-}
 
 .profile_image {
     vertical-align: middle;
     border-style: none;
 }
 
-.form-group {
+#PostImage {
+    border-style: none;
+}
+
+.form-group, .field{
     margin-bottom: 1rem;
 }
 
