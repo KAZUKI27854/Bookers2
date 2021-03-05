@@ -9,13 +9,14 @@
       <table class="table">
         <tbody>
           <tr>
-            <th><%= attachment_image_tag  @user, :profile_image, format: 'jpeg', size: "40x40", fallback: "no_image.jpg", class:"profile_image" %></br>
-            <%= link_to current_user.name, user_path %></th>
-            <th><%= link_to @book.title, book_path(@book.id) %></th>
-            <th><%= @book.body %></th>
-            <th><%= link_to "Edit", edit_book_path(@book.id), class:"btn btn-sm btn-success" %></th>
-            <th><%= link_to "Destroy", book_path(@book.id), method: :delete, "data-confirm" => "本当に消しますか？", class:"btn btn-sm btn-danger" %></th>
-            
+            <td><%= attachment_image_tag  @user, :profile_image, format: 'jpeg', size: "40x40", fallback: "no_image.jpg", class:"profile_image" %></br>
+            <%= link_to @user.name, user_path(@user.id) %></td>
+            <td><%= link_to @book_show.title, book_path(@book_show.id) %></td>
+            <td><%= @book_show.body %></td>
+            <% if current_user.id == @user.id %>
+            <td><%= link_to "Edit", edit_book_path(@book_show.id), class:"btn btn-sm btn-success" %></td>
+            <td><%= link_to "Destroy", book_path(@book_show.id), method: :delete, "data-confirm" => "本当に消しますか？", class:"btn btn-sm btn-danger" %></td>
+            <% end %>
           </tr>
         </tbody>
       </table>
