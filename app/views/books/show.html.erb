@@ -1,16 +1,15 @@
-
 <div class="container px-5 px-sm-0">
   <div class="row">
-    
     <%= render 'books/sidebar', book: @book, user: @user %>
-    
     <div class="col-md-8 offset-md-1">
       <h2>Book detail</h2>
       <table class="table">
         <tbody>
           <tr>
-            <td><%= attachment_image_tag  @user, :profile_image, format: 'jpeg', size: "40x40", fallback: "no_image.jpg", class:"profile_image" %></br>
-            <%= link_to @user.name, user_path(@user.id) %></td>
+            <td>
+              <%= attachment_image_tag  @user, :profile_image, format: 'jpeg', size: "40x40", fallback: "no_image.jpg", class:"profile_image" %><br>
+              <%= link_to @user.name, user_path(@user.id) %>
+            </td>
             <td><%= link_to @book_show.title, book_path(@book_show.id) %></td>
             <td><%= @book_show.body %></td>
             <% if current_user.id == @user.id %>

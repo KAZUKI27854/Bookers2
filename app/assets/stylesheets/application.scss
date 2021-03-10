@@ -36,8 +36,12 @@
     margin-bottom: 1rem;
 }
 
-#error_explanation {
+.error_explanation {
   color: red;
+}
+
+.error_message {
+    padding-inline-start: 40px;
 }
 
 .flash {
