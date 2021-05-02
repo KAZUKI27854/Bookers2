@@ -7,6 +7,7 @@ class UsersController < ApplicationController
  end
 
  def show
+  @user = User.find(params[:id])
   @book = Book.new
   @user = User.find(params[:id])
   @posted_book = Book.where(user_id: params[:id])
