@@ -1,19 +1,20 @@
 class ApplicationController < ActionController::Base
-  before_action :authenticate_user!,except: [:top, :about] 
+  before_action :authenticate_user!,except: [:top, :about]
   before_action:configure_permitted_parameters, if: :devise_controller?
-  
+
   def after_sign_in_path_for(resource)
     user_path(resource)
   end
-  
+
   def after_sign_up_path_for(resource)
     user_path(resource)
   end
-  
+
   protected
-  
+
   def configure_permitted_parameters
-    added_attrs = [:user_name, :email, :password, :password_confirmation, :remember_me]
+    added_attrs = [:user_name, :email, :password, :password_confirmation, :remember_me, :postcode,
+                   :prefecture_name, :address_city, :address_street]
     devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
     devise_parameter_sanitizer.permit :account_update, keys: added_attrs
   end
