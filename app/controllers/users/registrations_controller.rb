@@ -6,7 +6,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def create
     super
-    WelcomeMailer.send_when_signup(params[:user][:email]).deliver
+    ThanksMailer.send_when_signup(params[:user][:email]).deliver
   end
 
   # GET /resource/sign_up
